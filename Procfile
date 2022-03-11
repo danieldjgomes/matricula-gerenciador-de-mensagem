@@ -1,0 +1,1 @@
+web: java -DdbUrl=$dbURL -jar target/matricula-gerenciador-de-mensagens-0.0.1-SNAPSHOT.jar
