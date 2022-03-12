@@ -1,6 +1,5 @@
 package br.com.gomes.daniel.ufabc.alertadematricula.matriculagerenciadordemensagens.app.dominio;
 
-import br.com.gomes.daniel.ufabc.alertadematricula.domain.dominio.Periodo;
 import br.com.gomes.daniel.ufabc.alertadematricula.matriculagerenciadordemensagens.domain.dominio.Disciplina;
 import br.com.gomes.daniel.ufabc.alertadematricula.matriculagerenciadordemensagens.domain.dominio.Periodo;
 

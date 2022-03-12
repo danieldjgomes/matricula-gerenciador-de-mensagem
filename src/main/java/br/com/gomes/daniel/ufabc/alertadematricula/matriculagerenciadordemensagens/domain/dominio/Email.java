@@ -21,4 +21,7 @@ public class Email {
        return corpoValido.matches("/^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$/");
     }
 
+    public void setCorpo(String corpo) {
+        this.corpo = corpo;
+    }
 }

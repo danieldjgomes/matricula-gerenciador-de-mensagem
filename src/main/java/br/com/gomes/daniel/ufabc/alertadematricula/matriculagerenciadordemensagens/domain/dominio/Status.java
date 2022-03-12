@@ -2,6 +2,6 @@ package br.com.gomes.daniel.ufabc.alertadematricula.matriculagerenciadordemensag
 
 public enum Status {
 
-    AGUARDANDO, ENCERRADO
+    NOTIFICANDO, ENCERRADO
 
 }
