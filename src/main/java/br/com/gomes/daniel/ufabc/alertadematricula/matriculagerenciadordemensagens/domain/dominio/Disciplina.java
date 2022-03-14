@@ -16,6 +16,21 @@ public class Disciplina implements Serializable {
     private String codigo;
     private String campus;
 
+    public Disciplina(String identificadorUFABC, String nome, Periodo periodo, int vagasDisponibilizadas, int vagasIngressantes, int vagasDisponiveis, int creditos, String codigo, String campus) {
+        this.identificadorUFABC = identificadorUFABC;
+        this.nome = nome;
+        this.periodo = periodo;
+        this.vagasDisponibilizadas = vagasDisponibilizadas;
+        this.vagasIngressantes = vagasIngressantes;
+        this.vagasDisponiveis = vagasDisponiveis;
+        this.creditos = creditos;
+        this.codigo = codigo;
+        this.campus = campus;
+    }
+
+    public Disciplina() {
+    }
+
     public String getIdentificadorUFABC() {
         return identificadorUFABC;
     }
