@@ -20,17 +20,6 @@ public class ConfiguracaoDeAmbiente {
         return dataSource;
     }
 
-    @Bean
-    public ConnectionFactory connectionFactory() {
-        CachingConnectionFactory connectionFactory = new CachingConnectionFactory();
-        connectionFactory.setUri(System.getProperty("amqpUrl"));
-        return connectionFactory;
-    }
-
-    @Bean
-    public AmqpAdmin amqpAdmin() {
-        return new RabbitAdmin(connectionFactory());
-    }
 
 
 
