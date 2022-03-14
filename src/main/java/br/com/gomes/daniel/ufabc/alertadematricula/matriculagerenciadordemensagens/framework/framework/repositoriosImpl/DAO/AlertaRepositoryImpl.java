@@ -22,7 +22,7 @@ public class AlertaRepositoryImpl implements AlertaRepository {
     @Override
     public Optional<List<Alerta>> getAlertasPorId(String id) {
         String sql = "SELECT * FROM ALERTA WHERE disciplinaID = ?";
-        Query q = em.createNamedQuery(sql, AlertaDAO.class);
+        Query q = em.createNativeQuery(sql, AlertaDAO.class);
         q.setParameter(1,id);
         List<AlertaDAO> alertaDAOS = q.getResultList();
         List<Alerta>  alertas = alertaDAOS.stream().map(AlertaDAO::toDomain).collect(Collectors.toList());
