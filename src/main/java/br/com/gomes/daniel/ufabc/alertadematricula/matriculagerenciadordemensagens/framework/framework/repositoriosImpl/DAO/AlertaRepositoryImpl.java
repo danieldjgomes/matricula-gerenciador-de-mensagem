@@ -20,14 +20,14 @@ public class AlertaRepositoryImpl implements AlertaRepository {
     private EntityManager em;
 
     @Override
-    public Optional<List<Alerta>> getAlertasPorId(String id) {
-        String sql = "SELECT * FROM ALERTA WHERE disciplinaID = ?";
+    public Optional<List<Alerta>> getAlertasAtivosPorId(String id) {
+        String sql = "SELECT * FROM ALERTA WHERE disciplinaID = ? and Status = 'NOTIFICANDO'";
         Query q = em.createNativeQuery(sql, AlertaDAO.class);
         q.setParameter(1,id);
         List<AlertaDAO> alertaDAOS = q.getResultList();
         List<Alerta>  alertas = alertaDAOS.stream().map(AlertaDAO::toDomain).collect(Collectors.toList());
 
-        return Optional.ofNullable(Optional.of(alertas).orElseThrow(RepositorioAlertaIndisponivelException::new));
+            return Optional.ofNullable(Optional.of(alertas).orElseThrow(RepositorioAlertaIndisponivelException::new));
 
     }
 }
