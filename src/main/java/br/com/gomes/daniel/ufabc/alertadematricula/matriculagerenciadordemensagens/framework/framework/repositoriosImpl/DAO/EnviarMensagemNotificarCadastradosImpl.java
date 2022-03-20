@@ -21,5 +21,4 @@ public class EnviarMensagemNotificarCadastradosImpl implements EnviarMensagemNot
         log.info("Foi realizada a notificacao para o usuario " + Criptografador.paraSha256(notificarCadastradoMensagem.getConteudo().getDestinatario())  + " para a disciplina " + notificarCadastradoMensagem.getConteudo().getDisciplina().getNome() + " foi enviada para a fila " + notificarCadastradoMensagem.getFila());
     }
 
-
 }

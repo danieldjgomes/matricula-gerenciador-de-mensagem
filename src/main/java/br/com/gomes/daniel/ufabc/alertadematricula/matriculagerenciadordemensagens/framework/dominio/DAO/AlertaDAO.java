@@ -19,7 +19,7 @@ public class AlertaDAO {
 
     @Id
     @Column(name = "id")
-    private int id;
+    private String id;
 
     @Column(name = "disciplinaID")
     private String disciplinaID;
