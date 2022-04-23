@@ -16,7 +16,7 @@ public class ConstrutorDeFilasImpl implements ConstrutorDeFilas {
     private String NOME_EXCHANGE;
 
     @Value("${mensageria.rabbit.filas.notificarCadastrados}")
-    private String FILA_VAGAS;
+    private String FILA_CADASTRADOS;
 
     @Autowired
     private AmqpAdmin amqpAdmin;
@@ -34,7 +34,7 @@ public class ConstrutorDeFilasImpl implements ConstrutorDeFilas {
     }
 
     public void construir() {
-        Queue filaEstoque = this.fila(FILA_VAGAS);
+        Queue filaEstoque = this.fila(FILA_CADASTRADOS);
         DirectExchange troca = this.trocaDireta();
         Binding ligacaoEstoque = this.relacionamento(filaEstoque, troca);
         this.amqpAdmin.declareQueue(filaEstoque);

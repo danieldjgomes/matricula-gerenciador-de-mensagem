@@ -7,5 +7,5 @@ import java.util.Optional;
 
 public interface AlertaRepository {
 
-    public Optional<List<Alerta>> getAlertasPorId(String id);
+    public Optional<List<Alerta>> getAlertasAtivosPorId(String id);
 }

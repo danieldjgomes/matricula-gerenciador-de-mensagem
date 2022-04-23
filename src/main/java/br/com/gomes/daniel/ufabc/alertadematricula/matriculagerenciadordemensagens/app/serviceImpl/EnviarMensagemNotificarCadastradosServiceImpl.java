@@ -27,7 +27,7 @@ public class EnviarMensagemNotificarCadastradosServiceImpl implements EnviarMens
     }
 
     public void enviarMensagemNotificacao(Disciplina disciplina) {
-        Optional<List<Alerta>> alertas = alertaRepository.getAlertasPorId(disciplina.identificadorUFABC);
+        Optional<List<Alerta>> alertas = alertaRepository.getAlertasAtivosPorId(disciplina.identificadorUFABC);
         alertas.orElseThrow(RepositorioAlertaIndisponivelException::new);
 
         for (Alerta alerta : alertas.get()) {

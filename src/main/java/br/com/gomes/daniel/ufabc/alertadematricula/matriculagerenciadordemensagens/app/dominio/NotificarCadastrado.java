@@ -2,9 +2,10 @@ package br.com.gomes.daniel.ufabc.alertadematricula.matriculagerenciadordemensag
 
 import br.com.gomes.daniel.ufabc.alertadematricula.matriculagerenciadordemensagens.domain.dominio.Disciplina;
 
+import java.io.Serializable;
 import java.util.Map;
 
-public class NotificarCadastrado {
+public class NotificarCadastrado implements Serializable {
 
     public NotificarCadastrado(String destinatario, Disciplina disciplina) {
         this.destinatario = destinatario;

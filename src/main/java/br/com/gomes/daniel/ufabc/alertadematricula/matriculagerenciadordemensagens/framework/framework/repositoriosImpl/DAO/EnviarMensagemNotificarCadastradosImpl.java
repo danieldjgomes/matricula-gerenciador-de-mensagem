@@ -18,8 +18,7 @@ public class EnviarMensagemNotificarCadastradosImpl implements EnviarMensagemNot
 
     public void enviar(Mensagem<NotificarCadastrado> notificarCadastradoMensagem) {
         this.rabbitTemplate.convertAndSend(notificarCadastradoMensagem.getFila(),notificarCadastradoMensagem.getConteudo());
-        log.info("Foi realizada a notificacao para o usuario " + Criptografador.paraSha256(notificarCadastradoMensagem.getConteudo().getDestinatario())  + " para a disciplina " + notificarCadastradoMensagem.getConteudo().getDisciplina().getNome() + "foi enviada para a fila " + notificarCadastradoMensagem.getFila());
+        log.info("Foi realizada a notificacao para o usuario " + Criptografador.paraSha256(notificarCadastradoMensagem.getConteudo().getDestinatario())  + " para a disciplina " + notificarCadastradoMensagem.getConteudo().getDisciplina().getNome() + " foi enviada para a fila " + notificarCadastradoMensagem.getFila());
     }
-
 
 }

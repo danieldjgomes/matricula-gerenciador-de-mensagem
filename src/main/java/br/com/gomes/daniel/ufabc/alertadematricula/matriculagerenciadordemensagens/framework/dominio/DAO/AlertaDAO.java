@@ -1,6 +1,7 @@
 package br.com.gomes.daniel.ufabc.alertadematricula.matriculagerenciadordemensagens.framework.dominio.DAO;
 
 import br.com.gomes.daniel.ufabc.alertadematricula.matriculagerenciadordemensagens.domain.dominio.Alerta;
+import br.com.gomes.daniel.ufabc.alertadematricula.matriculagerenciadordemensagens.domain.dominio.Email;
 import br.com.gomes.daniel.ufabc.alertadematricula.matriculagerenciadordemensagens.domain.dominio.Status;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -18,7 +19,7 @@ public class AlertaDAO {
 
     @Id
     @Column(name = "id")
-    private int id;
+    private String id;
 
     @Column(name = "disciplinaID")
     private String disciplinaID;
@@ -35,7 +36,7 @@ public class AlertaDAO {
 
     public Alerta toDomain() {
         Alerta alerta = new Alerta();
-        alerta.getEmail().setCorpo(this.email);
+        alerta.setEmail(new Email(this.email));
         alerta.setIdDisciplina(this.disciplinaID);
         alerta.setStatus(this.status);
         return alerta;
